@@ -5,9 +5,11 @@
 
 function verificar(usuario, contraseña) {
 
-if (usuario.trim()==="" || contraseña.trim()==="") {
-    alert("El dato está vacío");
-} else{
+if (usuario.trim()==="") {
+    alert("Llene el usuario");
+} else if(contraseña.trim()===""){
+alert("Llene la contraseña");
+}else{
     
     localStorage.setItem("usuario",JSON.stringify(usuario));
     sessionStorage.setItem("usuario",JSON.stringify(usuario));
