@@ -4,16 +4,18 @@
 
 
 function verificar(usuario, contraseña) {
-
+    
+    let User={};
 if (usuario.trim()==="") {
     alert("Llene el usuario");
 } else if(contraseña.trim()===""){
 alert("Llene la contraseña");
 }else{
+    User.nombre=usuario;
+    User.estado="conectado";
+    User.contraseña=contraseña
+    localStorage.setItem("usuario",JSON.stringify(User));
     
-    localStorage.setItem("usuario",JSON.stringify(usuario));
-    sessionStorage.setItem("usuario",JSON.stringify(usuario));
-    localStorage.setItem("contraseña",JSON.stringify(contraseña));
     
     location.href="index.html";
     
