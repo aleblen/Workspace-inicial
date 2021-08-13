@@ -27,7 +27,11 @@
       align-items: center;
       padding-top: 40px;
       padding-bottom: 40px;
-      background-color: #f5f5f5;
+      background-image: url(img/fondo.jpg);
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -48,6 +52,12 @@
       margin: auto;
     }
 
+    .textoblanco{
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(46, 46, 46);
+      font-size: x-large;
+    }
+
   </style>
 </head>
 
@@ -55,7 +65,7 @@
   
   <div class="container p-5">
     <img src="img/plan.png" width="120" height="120"><br>
-    <h1 class="h3 mb-3 font-weight-normal">Por favor inicie sesión</h1>
+    <h1 class="textoblanco">Por favor inicie sesión</h1><br>
     <div id="dato" style="position: relative; width:auto; top: 0;" >
       <input type="text" id="usuario" placeholder="Introduzca su usuario" class="form-control" >
       
