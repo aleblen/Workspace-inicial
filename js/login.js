@@ -13,7 +13,7 @@ alert("Llene la contraseña");
 }else{
     User.nombre=usuario;
     User.estado="conectado";
-    User.contraseña=contraseña
+    User.contraseña=contraseña;
     localStorage.setItem("usuario",JSON.stringify(User));
     
     
