@@ -45,7 +45,7 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
   let usuario=JSON.parse(localStorage.getItem("usuario"));
-  if (usuario.estado==`conectado`){
+  if (User.estado==`conectado`){
     location.href="index.html";
   }
 });
