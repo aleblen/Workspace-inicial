@@ -37,7 +37,7 @@ function sortProducts(criteria, array){
     return result;
 }
 
-//para que aprezca lo que quiero y necesito de los productos tengo que reciclar las funciones de categorias (la de i+= etc) y cambiarle el getjsondata por el url de los productos, ademas no es necesario tener en el html los divs de los productos, lo copio en el js y se hace solo.//
+
 function showProductsList(){
 
     let htmlProductsToAppend = "";
@@ -48,7 +48,7 @@ function showProductsList(){
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
 
             htmlProductsToAppend += `
-            <div class="row">
+            
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                         <img src="` + Product.imgSrc + `" class="bd-placeholder-img card-img-top" height="225" width="100%" >
@@ -58,7 +58,7 @@ function showProductsList(){
                         </div>
                     </div>
                 </div>
-            </div>
+            
             
                 
             `
