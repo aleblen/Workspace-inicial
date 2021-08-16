@@ -13,7 +13,7 @@ function signOut() {
 function desconectar() {
     localStorage.clear;
     sessionStorage.clear;
-    signOut();
+    //signOut();
     location.href="login.html";
 }
 
