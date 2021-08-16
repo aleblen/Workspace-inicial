@@ -1,4 +1,4 @@
-function onLoad() {
+/*function onLoad() {
     gapi.onLoad(`auth2`, function(){
         gapi.auth2.init();
     });
@@ -9,6 +9,7 @@ function signOut() {
       console.log('User signed out.');
     });
   }
+  */
 function desconectar() {
     localStorage.clear;
     sessionStorage.clear;
