@@ -17,7 +17,7 @@ alert("Llene la contraseña");
     localStorage.setItem("usuario",JSON.stringify(User));
     
     
-    location.href="index.html";
+    location.href="principio.html";
     
 }
 }
@@ -39,7 +39,7 @@ function onSignIn(googleUser) {
   // The ID token you need to pass to your backend:
   var id_token = googleUser.getAuthResponse().id_token;
   console.log("ID Token: " + id_token);
-  location.href="index.html";
+  location.href="principio.html";
 }
 
 
