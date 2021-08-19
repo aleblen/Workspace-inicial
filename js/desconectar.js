@@ -33,12 +33,13 @@ function signOut() {
   function onLoad() {
     gapi.load(`auth2`, function(){
         gapi.auth2.init();
+        console.log("Iniciado");
     });
 }
 
 function desconectar() {
-    localStorage.clear;
-    sessionStorage.clear;
+    localStorage.clear();
+    sessionStorage.clear();
     signOut();
     location.href="index.html";
 }

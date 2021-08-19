@@ -53,8 +53,9 @@ function showProductsList(){
                     <div class="card mb-4 shadow-sm">
                         <img src="` + Product.imgSrc + `" class="bd-placeholder-img card-img-top" height="225" width="100%" >
                         <div class="card-body">
+                        <h2 style="text-align: center;">`+Product.name+` </h2>
                         <p class="card-text">`+Product.description+`</p><br>
-                        <p>Precio: `+Product.cost+ Product.currency+`</p>
+                        <h5 class="text-success" style="font-weight: bold; text-align: center;"> `+Product.cost+ Product.currency+`</h5>
                         </div>
                     </div>
                 </div>
