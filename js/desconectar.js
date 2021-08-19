@@ -23,6 +23,7 @@ $('#btn').click(function(){
     // will be executed after gapi is loaded, and gapi.auth2.init was called
   });
 });
+*/
 function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
@@ -34,11 +35,11 @@ function signOut() {
         gapi.auth2.init();
     });
 }
-*/
+
 function desconectar() {
     localStorage.clear;
     sessionStorage.clear;
-    //signOut();
+    signOut();
     location.href="index.html";
 }
 
