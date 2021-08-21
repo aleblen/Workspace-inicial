@@ -41,10 +41,15 @@ function onSignIn(googleUser) {
   var id_token = googleUser.getAuthResponse().id_token;
   console.log("ID Token: " + id_token);
     
+  let google={};
+  google.email=profile.getId();
+  google.nombre=profile.getName();
     
-    localStorage.setItem("usuario",JSON.stringify(profile));
+    localStorage.setItem("usuario",JSON.stringify(google));
   location.href="principio.html";
 }
+document.getElementById("bienvenido").innerHTML=google.nombre;
+document.getElementById("bienvenido").innerHTML=User.nombre;
 
 
   
