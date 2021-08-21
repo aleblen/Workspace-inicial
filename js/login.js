@@ -42,17 +42,18 @@ function onSignIn(googleUser) {
   console.log("ID Token: " + id_token);
     
   let google={};
-  google.email=profile.getId();
+  
   google.nombre=profile.getName();
     
-    localStorage.setItem("usuario",JSON.stringify(google));
+    //localStorage.setItem("usuario",JSON.stringify(google));
+    //document.getElementById("bienvenido").innerHTML=localStorage.getItem(google.nombre);
   location.href="principio.html";
 }
-document.getElementById("bienvenido").innerHTML=google.nombre;
-document.getElementById("bienvenido").innerHTML=User.nombre;
 
 
-  
+
+
+//document.getElementById(`bienvenido`).innerHTML=+JSON.parse(localStorage.getItem("usuario".nombre));
  
   
 
