@@ -8,6 +8,10 @@ var currentSortProduct = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
+
+
+
+
 function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
@@ -38,15 +42,17 @@ function sortProducts(criteria, array){
 }
 
 
+ 
+
 function showProductsList(){
 
     let htmlProductsToAppend = "";
     for(let i = 0; i < currentProductsArray.length; i++){
         let Product = currentProductsArray[i];
-
+        
         if (((minCount == undefined) || (minCount != undefined && parseInt(category.productCount) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
-
+                
             htmlProductsToAppend += `
             
                 <div class="col-md-4">
