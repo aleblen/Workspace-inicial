@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 
 function onSignIn(googleUser) {
-    let google={};
+    
   // Useful data for your client-side scripts:
   var profile = googleUser.getBasicProfile();
   console.log("ID: " + profile.getId()); // Don't send this directly to your server!
@@ -40,10 +40,9 @@ function onSignIn(googleUser) {
   // The ID token you need to pass to your backend:
   var id_token = googleUser.getAuthResponse().id_token;
   console.log("ID Token: " + id_token);
-    User.nombre=getGivenName;
-    google.estado="conectado";
     
-    localStorage.setItem("usuario",JSON.stringify(google));
+    
+    localStorage.setItem("usuario",JSON.stringify(profile));
   location.href="principio.html";
 }
 
