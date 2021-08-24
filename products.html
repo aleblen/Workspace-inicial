@@ -33,11 +33,61 @@
   
   <div class="album py-5 bg-light">
     <div style="font-family: Georgia, 'Times New Roman', Times, serif;" class="text-center">
-      <label  for="orden" style="font-size: larger; background-color: rgba(245, 163, 148, 0.479);">¿Cómo quiere que se ordenen los articulos?</label>
-      <center><select class="form-control" style="width: 300px; " name="orden" id="ordenamiento">
-  <option value="">Por precio (ascendente)</option>
-  <option value="">Por relevancia (descendente)</option>
-</select></center></div><br>
+      <div class="row ">
+      <div class="col text-center" style="background-color: rgba(112, 160, 100, 0.514); " >
+        <u><h1 >Productos</h1>
+        <h5>Aquí se encuentran todos los productos</h5></u>
+        
+      </div>
+    </div>
+        </div><br>
+
+        <div class="row ">
+          <div class="col text-right">
+              <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                  <label class="btn btn-secondary active" id="sortAsc" >
+                      <input type="radio" name="options" autocomplete="off" checked>A-Z
+                  </label>
+                  <label class="btn btn-secondary" id="sortDesc" >
+                      <input type="radio" name="options" autocomplete="off">Z-A
+                  </label>
+                  <label class="btn btn-secondary" id="sortByCostdesc" >
+                      <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Costo desc
+                  </label>
+                  <label class="btn btn-secondary" id="sortByCostasc" >
+                    <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Costo asc
+                </label>
+                <label class="btn btn-secondary" id="ordenarrelevancia" >
+                  <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
+              </label>
+              
+              </div>
+          </div>
+      </div>
+
+        <div class="row justify-content-end">
+          <div class="col-md-6"></div>
+            <div class="col-md-6 col-sm-12 mb-1 container">
+              <div class="row container p-0 m-0">
+                <div class="col " >
+                  <p class="font-weight-normal text-right my-2 " style="font-size: large; font-weight: bold;">Costo $</p>
+                </div>
+                <div class="col">
+                  <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+                </div>
+                <div class="col">
+                  <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+                </div>
+                <div class="col-3 p-0">
+                  <div class="btn-group" role="group">
+                    <button class="btn btn-secondary btn-block" id="rangeFilterCount">Filtrar</button>
+                    <button class="btn btn-secondary btn-sm" id="clearRangeFilter">Limpiar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+<br>
     <div class="container" >
       <div class="row" id="prod-list-container">
 
