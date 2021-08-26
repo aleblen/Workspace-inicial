@@ -23,6 +23,9 @@ alert("Llene la contraseña");
 }
 
 document.addEventListener("DOMContentLoaded", function(e){
+  let User =JSON.parse(localStorage.getItem(`usuario`)) ;
+
+  document.getElementById("bienvenido").innerHTML="Usuario: "+ User.nombre  ;
 
 });
 
@@ -45,7 +48,7 @@ function onSignIn(googleUser) {
   
   google.nombre=profile.getName();
     
-    //localStorage.setItem("usuario",JSON.stringify(google));
+    localStorage.setItem("usuario",JSON.stringify(google));
     //document.getElementById("bienvenido").innerHTML=localStorage.getItem(google.nombre);
   location.href="principio.html";
 }
@@ -53,7 +56,7 @@ function onSignIn(googleUser) {
 
 
 
-//document.getElementById(`bienvenido`).innerHTML=+JSON.parse(localStorage.getItem("usuario".nombre));
  
-  
+
+
 
