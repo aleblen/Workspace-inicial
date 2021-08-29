@@ -45,6 +45,20 @@
 
         <div class="row ">
           <div class="col text-right">
+            <div style="display: flex; align-items: center; justify-content:flex-end;" class="col-11 p-0">
+              <label for="buscador" class="font-weight-normal my-2 " style="font-size: large; ">Busca lo que necesites: </label>
+            <input type="search" name="Buscar" id="buscador" list="busca" placeholder="Ej: Chevrolet" >
+            <datalist id="busca">
+            
+            </datalist>
+            
+            <div class="col-1 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-secondary btn-block" onclick="buscador()">Buscar</button>
+              </div>
+            </div>
+            
+          </div><br>
               <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
                   <label class="btn btn-secondary active" id="sortAsc" >
                       <input type="radio" name="options" autocomplete="off" checked>A-Z
@@ -71,7 +85,7 @@
             <div class="col-md-6 col-sm-12 mb-1 container">
               <div class="row container p-0 m-0">
                 <div class="col " >
-                  <p class="font-weight-normal text-right my-2 " style="font-size: large; font-weight: bold;">Costo $</p>
+                  <p class="font-weight-normal text-right my-2 " style="font-size: large; ">Costo $</p>
                 </div>
                 <div class="col">
                   <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">

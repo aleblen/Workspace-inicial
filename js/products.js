@@ -70,7 +70,7 @@ function sortProducts(criteria, array){
  
 
 function showProductsList(){
-
+    let buscador="";
     let htmlProductsToAppend = "";
     for(let i = 0; i < currentProductsArray.length; i++){
         let Product = currentProductsArray[i];
@@ -94,9 +94,29 @@ function showProductsList(){
             
                 
             `
-        }
+            buscador += `
 
+        <option>`+ Product.name+` </option>
+        <option>`+ Product.description+` </option>
+        `
+        }
+        
+        let msg = document.getElementById('buscador');
+
+msg.addEventListener("keydown", (event) => {
+    
+});
+
+msg.addEventListener("keypress", (event) => {
+    
+});
+
+msg.addEventListener("keyup", (event) => {
+    document.getElementById("busca").innerHTML=buscador;
+});
+        
         document.getElementById("prod-list-container").innerHTML = htmlProductsToAppend;
+        
     }
 }
 
@@ -168,3 +188,8 @@ document.getElementById("rangeFilterCount").addEventListener("click", function()
 
     showProductsList();
 });
+
+
+function buscador() {
+    
+}
