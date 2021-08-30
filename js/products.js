@@ -69,7 +69,7 @@ function sortProducts(criteria, array){
 /***terminar la Relevancia*/
  
 
-function showProductsList(){
+function showProductsList(currentProductsArray){
     let buscador="";
     let htmlProductsToAppend = "";
     for(let i = 0; i < currentProductsArray.length; i++){
@@ -97,23 +97,13 @@ function showProductsList(){
             buscador += `
 
         <option>`+ Product.name+` </option>
-        <option>`+ Product.description+` </option>
+        
         `
         }
         
-        let msg = document.getElementById('buscador');
+        
+        document.getElementById("busca").innerHTML = buscador;
 
-msg.addEventListener("keydown", (event) => {
-    
-});
-
-msg.addEventListener("keypress", (event) => {
-    
-});
-
-msg.addEventListener("keyup", (event) => {
-    document.getElementById("busca").innerHTML=buscador;
-});
         
         document.getElementById("prod-list-container").innerHTML = htmlProductsToAppend;
         
@@ -130,7 +120,7 @@ function sortAndShowProducts(sortProduct, productsArray){
     currentProductsArray = sortProducts(currentSortProduct, currentProductsArray);
 
     
-    showProductsList();
+    showProductsList(currentProductsArray);
 }
 
 
@@ -138,8 +128,12 @@ document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(products_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
             sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
+            
         }
-    });
+        document.getElementById("buscador").addEventListener("keyup", (event) => {
+            verificando();
+        
+    })});
     document.getElementById("sortAsc").addEventListener("click", function(){
         sortAndShowProducts(ORDER_ASC_BY_NAME);
     });
@@ -163,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         minCost = undefined;
         maxCost = undefined;
-    showProductsList();
+    showProductsList(currentProductsArray);
 });
 });
 document.getElementById("rangeFilterCount").addEventListener("click", function(){
@@ -186,10 +180,17 @@ document.getElementById("rangeFilterCount").addEventListener("click", function()
         maxCost = undefined;
     }
 
-    showProductsList();
+    showProductsList(currentProductsArray);
 });
 
 
-function buscador() {
-    
+
+function verificando() {
+    var escrito=document.getElementById("buscador").value;
+    var productsfiltrados=currentProductsArray.filter(function(currentProductsArray) {
+        return currentProductsArray.name.toLowerCase().indexOf(escrito.toLowerCase()) > -1 ;
+         
+    })
+    showProductsList(productsfiltrados);
 }
+
