@@ -66,7 +66,7 @@ function sortProducts(criteria, array){
     return result;
 }
 
-/***terminar la Relevancia*/
+
  
 
 function showProductsList(currentProductsArray){
@@ -187,8 +187,8 @@ document.getElementById("rangeFilterCount").addEventListener("click", function()
 
 function verificando() {
     var escrito=document.getElementById("buscador").value;
-    var productsfiltrados=currentProductsArray.filter(function(currentProductsArray) {
-        return currentProductsArray.name.toLowerCase().indexOf(escrito.toLowerCase()) > -1 ;
+    var productsfiltrados=currentProductsArray.filter(function(prod) {
+        return prod.name.toLowerCase().indexOf(escrito.toLowerCase()) > -1 ;
          
     })
     showProductsList(productsfiltrados);
