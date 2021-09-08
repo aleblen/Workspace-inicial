@@ -4,8 +4,9 @@
 
 <head>
   <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="264632097992-q8jjmd4dpb8dl740jgt6r3pgcigdceqc.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+  <meta name="google-signin-client_id"
+    content="264632097992-q8jjmd4dpb8dl740jgt6r3pgcigdceqc.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -18,7 +19,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <script src="js/login.js"></script>
 </head>
- 
+
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -27,84 +28,89 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div class="py-2 d-none d-md-inline-block" style="background-color: transparent; color: white; border-color: transparent;" id="bienvenido"></div>
-      <button style="background-color: transparent; color: white; border-color: transparent;" id="desconectar" onclick="desconectar()"> Cerrar sesión  </button>
+      <div class="py-2 d-none d-md-inline-block"
+        style="background-color: transparent; color: white; border-color: transparent;" id="bienvenido"></div>
+      <button style="background-color: transparent; color: white; border-color: transparent;" id="desconectar"
+        onclick="desconectar()"> Cerrar sesión </button>
     </div>
   </nav>
-  
+
   <div class="album py-5 bg-light">
     <div style="font-family: Georgia, 'Times New Roman', Times, serif;" class="text-center">
       <div class="row ">
-      <div class="col text-center" style="background-color: rgba(112, 160, 100, 0.514); " >
-        <u><h1 >Productos</h1>
-        <h5>Aquí se encuentran todos los productos</h5></u>
-        
-      </div>
-    </div>
-        </div><br>
+        <div class="col text-center" style="background-color: rgba(112, 160, 100, 0.514); ">
+          <u>
+            <h1>Productos</h1>
+            <h5>Aquí se encuentran todos los productos</h5>
+          </u>
 
-        <div class="row ">
-          <div class="col text-right">
-            <div style="display: flex; align-items: center; justify-content:flex-end;" class="col-12 p-0">
-              <label for="buscador" class="font-weight-normal my-2 " style="font-size: large; margin-right: 5px;">Busque lo que necesite: </label>
-            <input type="search" name="Buscar" id="buscador" list="busca" placeholder="Ej: Chevrolet" >
-            <datalist id="busca">
-            
-            </datalist>
-            
-            
-            
-          </div><br>
-              <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                  <label class="btn btn-secondary active" id="sortAsc" >
-                      <input type="radio" name="options" autocomplete="off" checked>A-Z
-                  </label>
-                  <label class="btn btn-secondary" id="sortDesc" >
-                      <input type="radio" name="options" autocomplete="off">Z-A
-                  </label>
-                  <label class="btn btn-secondary" id="sortByCostdesc" >
-                      <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Costo desc
-                  </label>
-                  <label class="btn btn-secondary" id="sortByCostasc" >
-                    <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Costo asc
-                </label>
-                <label class="btn btn-secondary" id="ordenarrelevancia" >
-                  <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
-              </label>
-              
-              </div>
-          
+        </div>
+      </div>
+    </div><br>
+
+    <div class="row ">
+      <div class="col text-right">
+        <div style="display: flex; align-items: center; justify-content:flex-end;" class="col-12 p-0">
+          <label for="buscador" class="font-weight-normal my-2 " style="font-size: large; margin-right: 5px;">Busque lo
+            que necesite: </label>
+          <input type="search" name="Buscar" id="buscador" list="busca" placeholder="Ej: Chevrolet">
+          <datalist id="busca">
+
+          </datalist>
+
+
+
+        </div><br>
+        <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+          <label class="btn btn-secondary active" id="sortAsc">
+            <input type="radio" name="options" autocomplete="off" checked>A-Z
+          </label>
+          <label class="btn btn-secondary" id="sortDesc">
+            <input type="radio" name="options" autocomplete="off">Z-A
+          </label>
+          <label class="btn btn-secondary" id="sortByCostdesc">
+            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Costo desc
+          </label>
+          <label class="btn btn-secondary" id="sortByCostasc">
+            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Costo asc
+          </label>
+          <label class="btn btn-secondary" id="ordenarrelevancia">
+            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
+          </label>
+
+        </div>
+
 
         <div class="row justify-content-end">
           <div class="col-md-6"></div>
-            <div class="col-md-6 col-sm-12 mb-1 container">
-              <div class="row container p-0 m-0">
-                <div class="col " >
-                  <p class="font-weight-normal text-right my-2 " style="font-size: large; ">Costo $</p>
-                </div>
-                <div class="col">
-                  <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
-                </div>
-                <div class="col">
-                  <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
-                </div>
-                <div class="col-3 p-0">
-                  <div class="btn-group" role="group">
-                    <button class="btn btn-secondary btn-block" id="rangeFilterCount">Filtrar</button>
-                    <button class="btn btn-secondary btn-sm" id="clearRangeFilter">Limpiar</button>
-                  </div>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col ">
+                <p class="font-weight-normal text-right my-2 " style="font-size: large; ">Costo $</p>
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+              </div>
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-secondary btn-block" id="rangeFilterCount">Filtrar</button>
+                  <button class="btn btn-secondary btn-sm" id="clearRangeFilter">Limpiar</button>
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
-<br>
-    <div class="container" >
+    <br>
+    <div class="container">
       <div class="row" id="prod-list-container">
 
       </div>
-      
+
     </div>
   </div>
 

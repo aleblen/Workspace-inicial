@@ -4,8 +4,9 @@
 
 <head>
   <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="264632097992-q8jjmd4dpb8dl740jgt6r3pgcigdceqc.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+  <meta name="google-signin-client_id"
+    content="264632097992-q8jjmd4dpb8dl740jgt6r3pgcigdceqc.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -17,6 +18,54 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <script src="js/login.js"></script>
+  
+    
+
+  <style>
+    h2 {
+      color: rgb(146, 57, 41);
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    p {
+      font-style: italic;
+    }
+
+    h5 {
+      color: rgb(9, 9, 97);
+      font-weight: bold;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    .izq{
+      float: left;
+    }
+    
+
+    .contenedor-producto {
+      width: 750px;
+      height: 600px;
+      margin-left: 25%;
+      float: left
+    }
+
+    .imagen-principal {
+      width: 750px;
+      height: 450px;
+      border: 1px solid white;
+    }
+
+    [class *="subImagen-"] {
+     
+      width: 150px;
+      height: 120px;
+      border: 1px solid white;
+      
+    }
+    
+  </style>
 </head>
 
 <body>
@@ -27,18 +76,69 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div class="py-2 d-none d-md-inline-block" style="background-color: transparent; color: white; border-color: transparent;" id="bienvenido"></div>
-      <button style="background-color: transparent; color: white; border-color: transparent;" id="desconectar" onclick="desconectar()"> Cerrar sesión  </button>
+      <div class="py-2 d-none d-md-inline-block"
+        style="background-color: transparent; color: white; border-color: transparent;" id="bienvenido"></div>
+      <button style="background-color: transparent; color: white; border-color: transparent;" id="desconectar"
+        onclick="desconectar()"> Cerrar sesión </button>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div style="margin-left: 10%;margin-right: 10%;" class="izq">
+
+    <h2>Nombre</h2>
+    <p id="nombre"></p>
+    <h2>Categoría</h2>
+    <p id="cate"></p>
+    <h2>Descripción</h2>
+    <p id="descr"></p>
+    <h2>Costo</h2>
+    <p id="costo"></p>
+    
+    <h2>Imagenes</h2>
+
+
+    <br>
+  </div>
+  <br>
+  
+  <div class="contenedor-producto izq">
+    <div class="imagen-principal izq"></div>
+    <div class="subImagen-1 izq"></div>
+    <div class="subImagen-2 izq"></div>
+    <div class="subImagen-3 izq"></div>
+    <div class="subImagen-4 izq"></div>
+    <div class="subImagen-5 izq" ></div>
+  </div>
+
+  
+
+  <div style=" margin-left: 10%;margin-right: 10%; ">
+    <h2>Comentarios</h2><br>
+    <div id="comentarios" class="container comment">
+
+    </div>
+    <div style=" align-items: center;">
+      <h4>Comenta</h4>
+
+      <form action="" class="comment-form" id="comentario">
+        <div class="two_columns clearfix">
+          <div class="column1">
+            <div class="column_inner"><input id="author" name="author" placeholder="Tu usuario" type="text" value=""
+                aria-required="true"></div>
+          </div>
+          
+
+        </div>
+        <br>
+        <textarea id="comment" placeholder="Escribe tu comentario aqui..." name="comment" cols="50" rows="6"
+          aria-required="true"></textarea>
+        <p class="form-submit"></p><input name="submit" type="submit" id="submit_comment" class="submit" value="Subir">
+          <input type="hidden" name="comment_post_ID" value="2646" id="comment_post_ID"> <input type="hidden"
+            name="comment_parent" id="comment_parent" value="0"></p>
+      </form>
     </div>
   </div>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
