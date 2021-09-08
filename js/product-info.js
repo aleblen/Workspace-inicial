@@ -41,7 +41,9 @@ function mostrarcomentarios(comentarios){
     <h5 class="name" style="float: left;">${comentario.user}</h5>
     <p style="float: right;" >Comentado el ${comentario.dateTime}</p><br><br>
    <div class="text_holder"> <p style="font-family: Arial, Helvetica, sans-serif;" >${comentario.description}</p></div>
-    <p>${comentario.score}</p>   </div>  
+    <div class="stars-outer">
+        <div class="stars-inner" style="width:${comentario.score*20}%;"></div>
+      </div>   </div>  
       <hr>        
             `
         document.getElementById("comentarios").innerHTML = coment;       
@@ -70,3 +72,34 @@ function accion1(){imagenPrincipal.style.backgroundImage =zFondos150[1];}
 function accion2(){imagenPrincipal.style.backgroundImage =zFondos150[2];}
 function accion3(){imagenPrincipal.style.backgroundImage =zFondos150[3];}
 function accion4(){imagenPrincipal.style.backgroundImage =zFondos150[4];}
+
+
+
+function mostrar(comentarios){
+    let espacio = document.getElementById("comentarios");
+    let nombr=document.getElementById("author").value;
+    let valo=document.getElementById("valor").value ; 
+    let coment=document.getElementById("comment").value;
+    
+    let filas ="";
+    
+        
+        filas += ` 
+        
+        <div >
+    <h5 class="name" style="float: left;">${nombr}</h5>
+    <br><br>
+   <div class="text_holder"> <p style="font-family: Arial, Helvetica, sans-serif;" >${coment}</p></div>
+    <div class="stars-outer">
+        <div class="stars-inner" style="width: ${valo*20}%;"></div>
+      </div>   </div>  
+      <hr>     
+        `;
+
+    
+    espacio.innerHTML+=filas;
+    console.log(comentarios);
+}
+function cargar(){
+    mostrar(comentarios);            
+}
