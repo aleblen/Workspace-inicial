@@ -17,7 +17,26 @@ fetch(PRODUCT_INFO_URL)
     document.getElementById("costo").innerHTML+= ` ${datos.cost}  ${datos.currency}`;
     document.getElementById("cate").innerHTML+= ` ${datos.category} `;
     
+    let fotos ="";
     
+    for(let i=0; i<datos.images.length; i++){
+        let foto = datos.images[i];
+
+        
+        
+        
+        fotos+=`
+        
+        
+    
+      <img onmouseover="preview.src=img`+i+`.src" name="img`+i+`" src="`+foto+`" alt=""/>
+      
+        `
+        
+   
+        document.getElementById("imagenes").innerHTML=(fotos);
+    }
+    document.getElementById("imgpri").innerHTML=(`<img name="preview" src="`+datos.images[0]+`" alt=""/>`);
     
 })  
 document.addEventListener("DOMContentLoaded", function(e){
@@ -58,17 +77,18 @@ function mostrarcomentarios(comentarios){
 
 function mostrar(comentarios){
     let espacio = document.getElementById("comentarios");
-    let nombr=document.getElementById("author").value;
     
     let coment=document.getElementById("comment").value;
     
+    let com =JSON.parse(localStorage.getItem(`usuario`)) ;
+
     let filas ="";
     
         
         filas += ` 
         
         <div >
-    <h5 class="name" style="float: left;">${nombr}</h5>
+    <h5 class="name" style="float: left;">${com.nombre}</h5>
     <p style="float: right;" >Comentado el ${actu}</p><br><br>
    <div class="text_holder"> <p style="font-family: Arial, Helvetica, sans-serif;" >${coment}</p></div>
     <div class="stars-outer">
@@ -88,3 +108,5 @@ var valor = "";
 function asignarvalor(a) {
     valor=a;
 }
+
+

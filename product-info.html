@@ -153,23 +153,20 @@
   </div>
   <br>
   
-  <div class="gallery" align="center">
+  <div class="gallery" align="center" id="album"> 
 	
-    <div class="preview" align="center">
-      <img name="preview" src="img/prod1.jpg" alt=""/>
+    <div class="preview" align="center" id="imgpri">
+      
     </div>
-    <div class="thumbnails">
-      <img onmouseover="preview.src=img1.src" name="img1" src="img/prod1.jpg" alt=""/>
-      <img onmouseover="preview.src=img2.src" name="img2" src="img/prod1_1.jpg" alt=""/>
-      <img onmouseover="preview.src=img3.src" name="img3" src="img/prod1_2.jpg" alt=""/>
-      <img onmouseover="preview.src=img4.src" name="img4" src="img/prod1_3.jpg" alt=""/>
-      <img onmouseover="preview.src=img5.src" name="img5" src="img/prod1_4.jpg" alt=""/>
+    <div class="thumbnails" id="imagenes">
+      
     </div><br/>
   
     
   
   </div>
 <br>
+<div class="gallery" align="center" id="album1"></div>
   
 
   <div style=" margin-left: 10%;margin-right: 10%; ">
@@ -183,10 +180,8 @@
       <form action="" class="comment-form" id="comentario">
         
         <div class="two_columns clearfix">
-          <div class="column1">
-            <div class="column_inner"><input id="author" name="author" placeholder="Tu usuario" type="text" value=""
-                aria-required="true" required></div>
-          </div>
+          <textarea id="comment" placeholder="Escribe tu comentario aqui..." name="comment" cols="50" rows="6"
+          aria-required="true" required></textarea>
           <div class="puntuacion">
             <input id="radio1" type="radio" name="estrellas" value="5" onclick="asignarvalor(5)"><!--
             --><label for="radio1">★</label><!--
@@ -203,8 +198,7 @@
 
         </div>
         
-        <textarea id="comment" placeholder="Escribe tu comentario aqui..." name="comment" cols="50" rows="6"
-          aria-required="true" required></textarea>
+        
         <p class="form-submit"></p> <input type="button" onclick="cargar()" value="Subir"> 
           
            
