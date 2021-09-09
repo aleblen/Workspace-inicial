@@ -2,7 +2,10 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
-
+var hoy = new Date();
+var fecha= hoy.getFullYear()+`-`+(hoy.getMonth() + 1)+ `-`+ hoy.getDate();
+var hora=hoy.getHours()+`:`+hoy.getMinutes()+`:`+hoy.getSeconds();
+var actu = fecha + ` ` + hora;
 
 fetch(PRODUCT_INFO_URL)
 
@@ -49,36 +52,14 @@ function mostrarcomentarios(comentarios){
         document.getElementById("comentarios").innerHTML = coment;       
     }
 }
-var zFondos150 = ["url('img/prod1.jpg')","url('img/prod1_1.jpg')","url('img/prod1_2.jpg')","url('img/prod1_3.jpg')","url('img/prod1_4.jpg')"];
 
-var imagenPrincipal = document.querySelectorAll(".imagen-principal")[0];
-var subImagenes = document.querySelectorAll('[class *= "subImagen-"]');
-
-imagenPrincipal.style.backgroundImage =zFondos150[0];
-subImagenes[0].style.backgroundImage =zFondos150[0];
-subImagenes[1].style.backgroundImage =zFondos150[1];
-subImagenes[2].style.backgroundImage =zFondos150[2];
-subImagenes[3].style.backgroundImage =zFondos150[3];
-subImagenes[4].style.backgroundImage =zFondos150[4];
-
-subImagenes[0].addEventListener("mouseover",accion0);
-subImagenes[1].addEventListener("mouseover",accion1);
-subImagenes[2].addEventListener("mouseover",accion2);
-subImagenes[3].addEventListener("mouseover",accion3);
-subImagenes[4].addEventListener("mouseover",accion4);
-
-function accion0(){imagenPrincipal.style.backgroundImage =zFondos150[0];}
-function accion1(){imagenPrincipal.style.backgroundImage =zFondos150[1];}
-function accion2(){imagenPrincipal.style.backgroundImage =zFondos150[2];}
-function accion3(){imagenPrincipal.style.backgroundImage =zFondos150[3];}
-function accion4(){imagenPrincipal.style.backgroundImage =zFondos150[4];}
 
 
 
 function mostrar(comentarios){
     let espacio = document.getElementById("comentarios");
     let nombr=document.getElementById("author").value;
-    let valo=document.getElementById("valor").value ; 
+    
     let coment=document.getElementById("comment").value;
     
     let filas ="";
@@ -88,10 +69,10 @@ function mostrar(comentarios){
         
         <div >
     <h5 class="name" style="float: left;">${nombr}</h5>
-    <br><br>
+    <p style="float: right;" >Comentado el ${actu}</p><br><br>
    <div class="text_holder"> <p style="font-family: Arial, Helvetica, sans-serif;" >${coment}</p></div>
     <div class="stars-outer">
-        <div class="stars-inner" style="width: ${valo*20}%;"></div>
+        <div class="stars-inner" style="width: ${valor*20}%;"></div>
       </div>   </div>  
       <hr>     
         `;
@@ -102,4 +83,8 @@ function mostrar(comentarios){
 }
 function cargar(){
     mostrar(comentarios);            
+}
+var valor = "";
+function asignarvalor(a) {
+    valor=a;
 }

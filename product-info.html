@@ -75,27 +75,25 @@
       float: left;
     }
     
+    .thumbnails img {
+	width: 120px;
+	border: 2px solid rgb(77, 74, 74);
+	padding: 1px;
+	margin: 0 10px 10px 0;
+}
 
-    .contenedor-producto {
-      width: 750px;
-      height: 600px;
-      margin-left: 25%;
-      float: left
-    }
+.thumbnails img:hover {
+	border: 2px solid #00ccff;
+	cursor:pointer;
+}
 
-    .imagen-principal {
-      width: 750px;
-      height: 450px;
-      border: 1px solid white;
-    }
-
-    [class *="subImagen-"] {
-     
-      width: 150px;
-      height: 120px;
-      border: 1px solid white;
-      
-    }
+.preview img {
+	border: 4px solid #444;
+	padding: 1px;
+	width: 650px;
+  margin: 0 10px 10px 0
+}
+   
     .stars-outer {
   display: inline-block;
   position: relative;
@@ -155,15 +153,23 @@
   </div>
   <br>
   
-  <div class="contenedor-producto izq">
-    <div class="imagen-principal izq"></div>
-    <div class="subImagen-1 izq"></div>
-    <div class="subImagen-2 izq"></div>
-    <div class="subImagen-3 izq"></div>
-    <div class="subImagen-4 izq"></div>
-    <div class="subImagen-5 izq" ></div>
+  <div class="gallery" align="center">
+	
+    <div class="preview" align="center">
+      <img name="preview" src="img/prod1.jpg" alt=""/>
+    </div>
+    <div class="thumbnails">
+      <img onmouseover="preview.src=img1.src" name="img1" src="img/prod1.jpg" alt=""/>
+      <img onmouseover="preview.src=img2.src" name="img2" src="img/prod1_1.jpg" alt=""/>
+      <img onmouseover="preview.src=img3.src" name="img3" src="img/prod1_2.jpg" alt=""/>
+      <img onmouseover="preview.src=img4.src" name="img4" src="img/prod1_3.jpg" alt=""/>
+      <img onmouseover="preview.src=img5.src" name="img5" src="img/prod1_4.jpg" alt=""/>
+    </div><br/>
+  
+    
+  
   </div>
-
+<br>
   
 
   <div style=" margin-left: 10%;margin-right: 10%; ">
@@ -182,19 +188,19 @@
                 aria-required="true" required></div>
           </div>
           <div class="puntuacion">
-            <input id="radio1" type="radio" name="estrellas" value="5"onclick="document.getElementById('valor').innerHTML='5'"><!--
+            <input id="radio1" type="radio" name="estrellas" value="5" onclick="asignarvalor(5)"><!--
             --><label for="radio1">★</label><!--
-            --><input id="radio2" type="radio" name="estrellas" value="4" onclick="document.getElementById('valor').innerHTML='4'"><!--
+            --><input id="radio2" type="radio" name="estrellas" value="4" onclick="asignarvalor(4)"><!--
             --><label for="radio2">★</label><!--
-            --><input id="radio3" type="radio" name="estrellas" value="3" onclick="document.getElementById('valor').innerHTML='3'"><!--
+            --><input id="radio3" type="radio" name="estrellas" value="3" onclick="asignarvalor(3)"><!--
             --><label for="radio3">★</label><!--
-            --><input id="radio4" type="radio" name="estrellas" value="2"onclick="document.getElementById('valor').innerHTML='2'"><!--
+            --><input id="radio4" type="radio" name="estrellas" value="2"onclick="asignarvalor(2)"><!--
             --><label for="radio4">★</label><!--
-            --><input id="radio5" type="radio" name="estrellas" value="1" onclick="document.getElementById('valor').innerHTML='1'"><!--
+            --><input id="radio5" type="radio" name="estrellas" value="1" onclick="asignarvalor(1)"><!--
             --><label for="radio5">★</label><br>
             
           </div>
-<p style="visibility: hidden;" id="valor"> </p>
+
         </div>
         
         <textarea id="comment" placeholder="Escribe tu comentario aqui..." name="comment" cols="50" rows="6"
