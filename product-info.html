@@ -180,8 +180,7 @@
       <form action="" class="comment-form" id="comentario">
         
         <div class="two_columns clearfix">
-          <textarea id="comment" placeholder="Escribe tu comentario aqui..." name="comment" cols="50" rows="6"
-          aria-required="true" required></textarea>
+          
           <div class="puntuacion">
             <input id="radio1" type="radio" name="estrellas" value="5" onclick="asignarvalor(5)"><!--
             --><label for="radio1">★</label><!--
@@ -197,7 +196,8 @@
           </div>
 
         </div>
-        
+        <textarea id="comment" placeholder="Escribe tu comentario aqui..." name="comment" cols="50" rows="6"
+          aria-required="true" required></textarea>
         
         <p class="form-submit"></p> <input type="button" onclick="cargar()" value="Subir"> 
           
