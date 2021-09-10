@@ -102,7 +102,14 @@ function mostrar(comentarios){
     console.log(comentarios);
 }
 function cargar(){
-    mostrar(comentarios);            
+    mostrar(comentarios);
+    asignarvalor(0);     
+    document.getElementById("radio1").checked=false;   
+    document.getElementById("radio2").checked=false;   
+    document.getElementById("radio3").checked=false;   
+    document.getElementById("radio4").checked=false;   
+    document.getElementById("radio5").checked=false;     
+    document.getElementById("comment").value=""; 
 }
 var valor = "";
 function asignarvalor(a) {
