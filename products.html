@@ -18,6 +18,15 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <script src="js/login.js"></script>
+  <style>
+    #cubrir:hover{
+      border: 2px solid #069612;
+	    cursor:pointer;
+    }
+    .cursor{
+      cursor:pointer;
+    }
+  </style>
 </head>
 
 <body>
@@ -62,20 +71,20 @@
 
         </div><br>
         <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-          <label class="btn btn-secondary active" id="sortAsc">
-            <input type="radio" name="options" autocomplete="off" checked>A-Z
+          <label class="btn btn-secondary active cursor" id="sortAsc" >
+            <input type="radio" name="options" autocomplete="off" checked >A-Z
           </label>
-          <label class="btn btn-secondary" id="sortDesc">
-            <input type="radio" name="options" autocomplete="off">Z-A
+          <label class="btn btn-secondary cursor" id="sortDesc">
+            <input type="radio" name="options" autocomplete="off" >Z-A
           </label>
-          <label class="btn btn-secondary" id="sortByCostdesc">
-            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Costo desc
+          <label class="btn btn-secondary cursor" id="sortByCostdesc">
+            <input type="radio" name="options" autocomplete="off" ><i class="fas fa-sort-amount-down mr-1"></i>Costo desc
           </label>
-          <label class="btn btn-secondary" id="sortByCostasc">
-            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-up mr-1"></i>Costo asc
+          <label class="btn btn-secondary cursor" id="sortByCostasc">
+            <input type="radio" name="options" autocomplete="off" ><i class="fas fa-sort-amount-up mr-1"></i>Costo asc
           </label>
-          <label class="btn btn-secondary" id="ordenarrelevancia">
-            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
+          <label class="btn btn-secondary cursor" id="ordenarrelevancia">
+            <input type="radio" name="options" autocomplete="off" ><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
           </label>
 
         </div>

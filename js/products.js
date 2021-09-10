@@ -80,8 +80,8 @@ function showProductsList(currentProductsArray){
                 
             htmlProductsToAppend += `
             
-                <div class="col-md-4" onclick=location.href="product-info.html">
-                    <div class="card mb-4 shadow-sm">
+                <div class="col-md-4" onclick=location.href="product-info.html" >
+                    <div class="card mb-4 shadow-sm" id="cubrir">
                         <img src="` + Product.imgSrc + `" class="bd-placeholder-img card-img-top" height="225" width="100%" >
                         <div class="card-body">
                         <h2 style="text-align: center;">`+Product.name+` </h2>
