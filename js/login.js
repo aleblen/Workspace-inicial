@@ -25,7 +25,7 @@ alert("Llene la contraseña");
 document.addEventListener("DOMContentLoaded", function(e){
   let User =JSON.parse(localStorage.getItem(`usuario`)) ;
 
-  document.getElementById("bienvenido").innerHTML="Usuario: "+ User.nombre  ;
+  document.getElementById("bienvenido").innerHTML="Usuario: "+ User.nombre +" " +`<i class="fa fa-caret-down"></i>` ;
 
 });
 
