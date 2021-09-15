@@ -17,6 +17,9 @@
   <link href="css/styles.css" rel="stylesheet">
   <script src="js/desconectar.js"></script>
   <script src="js/login.js"></script>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -26,9 +29,14 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <div class="py-2 d-none d-md-inline-block" style="background-color: transparent; color: white; border-color: transparent;" id="bienvenido"></div>
-      <button style="background-color: transparent; color: white; border-color: transparent;" id="desconectar" onclick="desconectar()"> Cerrar sesión  </button>
+       <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn" id="bienvenido"></button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="/my-profile.html">Mi perfil</a>
+          <a  href="cart.html">Mi carrito</a>
+          <a onclick="desconectar()" id="desconectar" style="cursor: pointer;">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
   <main role="main">
