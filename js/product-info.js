@@ -38,7 +38,49 @@ fetch(PRODUCT_INFO_URL)
     }
     document.getElementById("imgpri").innerHTML=(`<img name="preview" src="`+datos.images[0]+`" alt=""/>`);
     
-})  
+    let rela ="";
+    
+        let x=0;
+        
+        fetch(PRODUCTS_URL)
+
+        .then(respuestas => respuestas.json())
+        
+        .then(dat => {
+            
+            
+            
+            for(let i=0; i<datos.relatedProducts.length; i++){
+                let fot = datos.relatedProducts[i];
+                console.log(fot);
+                let fotorel = dat[fot];
+                
+                if (x==0) {
+                    rela+=`<div class="carousel-item active">
+                    <img src="` + fotorel.imgSrc + `" class="d-block w-100" alt="100%">
+                </div>`
+                x++;
+                } else {
+                    rela+=`<div class="carousel-item ">
+                    <img src="` + fotorel.imgSrc + `" class="d-block w-100" alt="100%">
+                </div>`
+                }
+                document.getElementById("relacionados").innerHTML=(rela);
+            }
+        })
+     
+    
+}) 
+
+
+    
+    
+    
+    
+    
+
+
+
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
