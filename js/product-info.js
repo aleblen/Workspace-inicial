@@ -58,11 +58,17 @@ fetch(PRODUCT_INFO_URL)
                 if (x==0) {
                     rela+=`<div class="carousel-item active">
                     <img src="` + fotorel.imgSrc + `" class="d-block w-100" alt="100%">
+                    <div class="carousel-caption d-none d-md-block">
+        <h5 style="color: white;">` + fotorel.name + `</h5>  
+      </div>
                 </div>`
                 x++;
                 } else {
                     rela+=`<div class="carousel-item ">
                     <img src="` + fotorel.imgSrc + `" class="d-block w-100" alt="100%">
+                    <div class="carousel-caption d-none d-md-block">
+        <h5 style="color: white;">` + fotorel.name + `</h5>  
+      </div>
                 </div>`
                 }
                 document.getElementById("relacionados").innerHTML=(rela);
