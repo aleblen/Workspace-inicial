@@ -57,21 +57,102 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+        <h2>Mi carrito</h2>
+        <p class="lead">Verás aquí todas los productos que hayas puesto en <u><b>mi carrito</b></u>.</p>
+    </div>
+  </main>
+  <div class="container">
+    <!-- <div class="row">
+        <div class="list-group" id="carrito">
+
+        </div>
+    </div> -->
+  </div> 
+
+
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-8 mb-4">
+      <form id="cart-update-form">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th class="mob-hide" style="text-align: center;">Imagen</th>
+                <th class="mob-hide">Precio Unitario</th>
+                <th class="table-qty">Cantidad</th>
+                <th>Subtotal</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="carrito">
+            
+              </tbody>         
+          </table>
+        </div>
+      </form>
+      <hr class="my-3">
+      <div class="row">
+        
+        <div class="cart-discount text-center col-md-6 offset-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h4>¿Tienes un código de descuento?</h4>
+              <form>  <input id="coupon_code" name="code" type="text" class="text"/>
+  <input id="set_coupon_code_button" type="submit" value="Aplicar"/>
+  
+</form></div></div></div></div></div>
+<div class="col-lg-4 mb-4">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 cart-estimate">
+      <div class="card mb-3">
+        <div class="card-header">
+          <h2 class="card-title">Estimate Shipping Costs</h2>
+        </div>
+        <div class="card-body">
+          <div class="card-text"><div id="estimate_shipping">
+<form action="/cart/estimate" accept-charset="UTF-8" id="estimate_shipping_form" autocomplete="off" method="post">    <!-- Country -->
+<label for="estimate_shipping_country">Country</label>
+</form>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+     <div class="col-12 cart-totals">
+      <table class="table table-striped">   
+        <tr class="totals">
+          <td colspan="1" class="text-left">Shipping</td>
+          <td colspan="1" class="text-right">$0</td>
+        </tr>
+        <tr class="totals key">
+          <td colspan="1" class="text-left"><strong>Total</strong></td>
+          <td colspan="1" class="text-right" ><strong>$200.000</strong></td>
+        </tr>
+      </table>
+
+      <div class="text-center cart-actions">
+        
+        <a href="" class="btn btn-primary btn-block" title="Proceed to Checkout">Proceed to Checkout</a>
+        
+
+        <a href="/products.html" class="btn btn-link btn-block" title="&larr; Continue Shopping">&larr; Continue Shopping</a>
+      </div>
     </div>
   </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+</div>
+</div>
+
+</div>
+            
+          
+        
+        
+      
+    
   </div>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
