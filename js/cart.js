@@ -1,28 +1,39 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+var costosub=0;
+var valorenvio=0;
 document.addEventListener("DOMContentLoaded", function (e) {
-
+for( let radio of document.getElementsByClassName("radio")){
+  radio.addEventListener("click",function (e) {
+    valorenvio=radio.getAttribute("valor");
+    calcenvio();
+  })
+}
 });
+
 let subtotales = document.getElementsByClassName("order-product-subtotal");
-let sumade = 0;                
-function coso() {
-  
-  for (let i = 0; i < subtotales.length; i++) {
-    sumade+=parseInt(subtotales[i].innerHTML);
+              
+function calcularcasi() {
+  let subtotales2 = document.getElementsByClassName("order-product-subtotal");
+let totalcalc=0;
+
+  for (let i = 0; i < subtotales2.length; i++) {
+    totalcalc+=parseInt(subtotales2[i].textContent);
     
   }
-  document.getElementById("sub").innerHTML=sumade;
-  
+  document.getElementById("sub").innerHTML=totalcalc.toFixed(1);
+  costosub=totalcalc;
 }
 
-function envios(num) {
-  document.getElementById("envio").textContent=sumade*num;
-  
+
+function calcenvio() {
+  document.getElementById("envio").textContent=(costosub*valorenvio).toFixed(1);
+  document.getElementById("total").textContent=(costosub+(costosub*valorenvio)).toFixed(1);
 }
-function total(tot) {
-  document.getElementById("total").textContent=sumade*tot;
-}
+
+
+
 
 fetch(CART_DESA)
 
@@ -74,7 +85,11 @@ fetch(CART_DESA)
         
         let subtot = resultado.getElementsByClassName("order-product-subtotal")[0];
         subtot.textContent = `${product.unitCost * cant.value}`;
-       
+        calcularcasi();
+        calcenvio();
+        
+        
+        
       })
 
       //agregamos el elemento resultado al carrito
@@ -87,7 +102,16 @@ fetch(CART_DESA)
 
     
 
-    coso();
+    calcularcasi();
 
   })
   
+  function swall(){
+    
+    Swal.fire({
+        title: "¡UPS!",
+        text: "No se ha encontrado ese código",
+        icon: "error",
+        confirmButtonText: "Volver al carrito",
+        
+    })}

@@ -7,7 +7,7 @@
     <meta name="google-signin-client_id" content="264632097992-q8jjmd4dpb8dl740jgt6r3pgcigdceqc.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
@@ -67,11 +67,7 @@
     </div>
   </main>
   <div class="container">
-    <!-- <div class="row">
-        <div class="list-group" id="carrito">
-
-        </div>
-    </div> -->
+    
   </div> 
 
 
@@ -96,7 +92,7 @@
               </tbody>         
           </table>
         </div>
-      </form>
+      
       <hr class="my-3">
       <div class="row">
         
@@ -105,9 +101,9 @@
             <div class="card-body">
               <h4>¿Tienes un código de descuento?</h4>
               <form>  <input id="coupon_code" name="code" type="text" class="text"/>
-  <input id="set_coupon_code_button" type="submit" value="Aplicar"/>
+  <input id="set_coupon_code_button" type="submit" value="Aplicar" onclick="swall()"/>
   
-</form></div></div></div></div></div>
+</div></div></div></div></div>
 <div class="col-lg-4 mb-4">
   <div class="row">
     <div class="col-sm-12 col-md-12 cart-estimate">
@@ -126,11 +122,11 @@
 <label for="dire">Esquina:</label>
 <input type="text" name="1" id="dire" required><br><br>
 <h5><b>Forma de envío:</b></h5>
-<input type="radio" name="1" id="pre" required onclick="envios(0.15),total(1.15)"> 
+<input type="radio" name="1" id="pre" required valor=0.15 class="radio"> 
 <label for="pre">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label>
-<input type="radio" name="1" id="exp" onclick="envios(0.07),total(1.07)">
+<input type="radio" name="1" id="exp" valor=0.07 class="radio">
 <label for="exp">Express (5-8 días) - Costo del 7% sobre el subtotal.</label>
-<input type="radio" name="1" id="sta" onclick="envios(0.05),total(1.05)">
+<input type="radio" name="1" id="sta" valor=0.05 class="radio">
 <label for="sta">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</label>
 
 </div>
@@ -178,7 +174,7 @@
       
     </div>
   </div> -->
-        <button type="submit" value="Comprar" class="btn btn-primary btn-block">Comprar</button>
+        <button type="submit" value="Comprar"  class="btn btn-primary btn-block">Comprar</button>
         
         
 
