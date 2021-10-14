@@ -1,71 +1,93 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
-    
+document.addEventListener("DOMContentLoaded", function (e) {
+
 });
+let subtotales = document.getElementsByClassName("order-product-subtotal");
+let sumade = 0;                
+function coso() {
+  
+  for (let i = 0; i < subtotales.length; i++) {
+    sumade+=parseInt(subtotales[i].innerHTML);
+    
+  }
+  document.getElementById("sub").innerHTML=sumade;
+  
+}
 
-fetch(CART_INFO_URL)
+function envios(num) {
+  document.getElementById("envio").textContent=sumade*num;
+  
+}
+function total(tot) {
+  document.getElementById("total").textContent=sumade*tot;
+}
 
-.then(respuesta => respuesta.json())
+fetch(CART_DESA)
 
-.then(carrito => {
+  .then(respuesta => respuesta.json())
 
-    let carr=carrito.articles;
+  .then(carrito => {
 
-    for(let i = 0; i <carr.length; i++){
-        let car = carr[i];
-        
-        let carro = "";
+    let carr = carrito.articles;
 
-            carro += `
-            <tr>
-              <td>
-                <h5>${car.name}</h5>
-                <br>
-              </td>
-              <td class="text-center mob-hide">
-                  <img src="${car.src}" title="${car.name}">
-              </td>
-              <td class="mob-hide">
-                <span class="order-product-price">$${car.currency}`+`${car.unitCost}</span>
-              </td>
-              <td>
-                <input style="width: 130px;" type="number" name="Cantidad" min="1" value="${car.count}"  id="costo`+i+`">
-                
-              </td>
-              <td>
-              <span class="order-product-subtotal">$${car.currency}`+`${car.unitCost*car.count}</span>
-              </td>
-               </tr> `
-            //     <span class="order-product-subtotal">$${car.currency}`+`${car.unitCost*#costo[i].value}</span>
-            //   
-    //         `  
-    //         <div class="list-group-item">
-    //         <div class="row">
-    //         <div class="col-3">
-    //             <img src="${car.src}" class="img-thumbnail">
-    //         </div>
-    //         <div class="col">
-    //             <div class="d-flex w-100 justify-content-between">
-    //                 <h4 class="mb-1">${car.name}</h4>
-    //                 <p class="mb-1">Precio individual:$${car.currency}`+`${car.unitCost}  </p>
-    //             </div>
-                
-                
-    //             <p class="mb-1">${car.count} artículos</p>
-    //         </div>
-    //     </div>
-    // </div> 
-    //         `
-            let subtotal="";
-
-            subtotal+=`
+    for (let i = 0; i < carr.length; i++) {
+      let product = carr[i];
+      let resultado = document.createElement("tr");
+      resultado.className="productoresult";
+      let carro = "";
+      if (product.currency==="USD") {
+        product.unitCost=product.unitCost*40;
+      }else{
+        product.unitCost=product.unitCost;
+      }
+      
+      carro += `
             
-            `
+        <td>
+                <h5>${product.name}</h5>
+                <br>
+        </td>
+        <td class="text-center mob-hide">
+                <img class="imgproduct" src="${product.src}" title="${product.name}">
+        </td>
+        <td class="mob-hide">
+                <span class="order-product-price">UYU` + `${product.unitCost}</span>
+        </td>
+        <td>
+                <input class="cantidaddeunidades"style="width: 130px;" type="number" name="Cantidad" min="1" value="${product.count}" >
+                
+        </td>
+        <td>
+                <span>UYU</span><span class="order-product-subtotal">${product.unitCost * product.count}</span>
+        </td>
+                `
+              
 
-            document.getElementById("carrito").innerHTML = carro;
+
+      resultado.innerHTML = carro;
+
+      //calculo el subtotal de un solo articulo
+      let cant = resultado.getElementsByClassName("cantidaddeunidades")[0];
+      cant.addEventListener('change', function (e) {
+        
+        let subtot = resultado.getElementsByClassName("order-product-subtotal")[0];
+        subtot.textContent = `${product.unitCost * cant.value}`;
+       
+      })
+
+      //agregamos el elemento resultado al carrito
+      document.getElementById("carrito").appendChild(resultado);
+
+
+
     }
     
-})
 
+    
+
+    coso();
+
+  })
+  
