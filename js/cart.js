@@ -12,7 +12,7 @@ for( let radio of document.getElementsByClassName("radio")){
 }
 });
 
-let subtotales = document.getElementsByClassName("order-product-subtotal");
+
               
 function calcularcasi() {
   let subtotales2 = document.getElementsByClassName("order-product-subtotal");
@@ -29,7 +29,14 @@ let totalcalc=0;
 
 function calcenvio() {
   document.getElementById("envio").textContent=(costosub*valorenvio).toFixed(1);
-  document.getElementById("total").textContent=(costosub+(costosub*valorenvio)).toFixed(1);
+  if (descuento==0) {
+    document.getElementById("total").textContent=(costosub+(costosub*valorenvio)).toFixed(1);
+  } else {
+    descuento=costosub*0.10;
+    document.getElementById("total").textContent=(costosub+(costosub*valorenvio)-costosub*0.10).toFixed(1);
+  }
+  
+  document.getElementById("descuento").innerHTML=(-descuento).toFixed(1);
 }
 
 
@@ -105,13 +112,30 @@ fetch(CART_DESA)
     calcularcasi();
 
   })
+
+  let descuento=(0).toFixed(1);
   
   function swall(){
-    
-    Swal.fire({
+    if ((document.getElementById("coupon_code").value).trim()!="") {
+      Swal.fire({
+        title: "¡Gracias!",
+        text: "¡Se te ha aplicado un 10% de descuento!",
+        icon: "success",
+        confirmButtonText: "Volver al carrito",
+        
+    })
+    descuento=((-costosub*0.10));
+    } else {
+      Swal.fire({
         title: "¡UPS!",
         text: "No se ha encontrado ese código",
         icon: "error",
         confirmButtonText: "Volver al carrito",
         
-    })}
+    })
+    descuento=(0);
+    }
+    
+document.getElementById("descuento").innerHTML=descuento.toFixed(1);
+document.getElementById("total").textContent=(costosub+(costosub*valorenvio)+descuento).toFixed(1);
+    }

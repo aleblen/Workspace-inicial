@@ -101,7 +101,8 @@
             <div class="card-body">
               <h4>¿Tienes un código de descuento?</h4>
               <form>  <input id="coupon_code" name="code" type="text" class="text"/>
-  <input id="set_coupon_code_button" type="submit" value="Aplicar" onclick="swall()"/>
+  <input id="set_coupon_code_button" type="submit" value="Aplicar" onclick="swall()"/><br>
+  <small>Ten en cuenta que el descuento se hará sobre el subtotal sin haber sumado el envío</small>
   
 </div></div></div></div></div>
 <div class="col-lg-4 mb-4">
@@ -143,6 +144,11 @@
         <tr class="totals">
           <td colspan="1" class="text-left">Envío</td>
           <td colspan="1" class="text-right" id="envio"></td>
+        </tr>
+        <tr class="totals">
+          <td colspan="1" class="text-left">Descuento</td>
+          
+          <td colspan="1" class="text-right" id="descuento"></td>
         </tr>
         <tr class="totals key">
           <td colspan="1" class="text-left"><strong>Total</strong></td>
