@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(e){
   let User =JSON.parse(localStorage.getItem(`usuario`)) ;
 
   document.getElementById("bienvenido").innerHTML="Usuario: "+ User.nombre +" " +`<i class="fa fa-caret-down"></i>` ;
-
+  document.getElementById("perfil").innerHTML=`<b>Usuario: </b>${User.nombre}`;
 });
 
 function onSignIn(googleUser) {

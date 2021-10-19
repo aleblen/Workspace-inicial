@@ -5,7 +5,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id" content="264632097992-q8jjmd4dpb8dl740jgt6r3pgcigdceqc.apps.googleusercontent.com">
+  <meta name="google-signin-client_id"
+    content="264632097992-q8jjmd4dpb8dl740jgt6r3pgcigdceqc.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -30,6 +31,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="/estilosperfil.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
@@ -37,6 +39,8 @@
   <script src="js/login.js"></script>
   <link rel="stylesheet" href="estilos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 
 </head>
 
@@ -50,21 +54,63 @@
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn" id="bienvenido"></button>
         <div id="myDropdown" class="dropdown-content">
-          <a href="/my-profile.html">Mi perfil</a>
-          <a  href="cart.html">Mi carrito</a>
+          <a href="my-profile.html">Mi perfil</a>
+          <a href="cart.html">Mi carrito</a>
           <a onclick="desconectar()" id="desconectar" style="cursor: pointer;">Cerrar sesión</a>
         </div>
       </div>
-       </div>
+    </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-3 border-right">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><a href="https://ibb.co/Lp8byvB"><img class="rounded-circle mt-5"
+            width="100%"
+            src="https://i.ibb.co/HgV1yXR/car1.jpg"></a>
+            <span class="font-weight-bold"></span><span id="perfil"> </span>
+        </div>
+      </div>
+      <div class="col-md-5 border-right">
+        <div class="p-3 py-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="text-right">Perfil</h4>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-6"><label class="labels">Nombre</label><input type="text" class="form-control"
+                placeholder="Nombre" value="" id="nombre1"></div>
+            <div class="col-md-6"><label class="labels">Apellido</label><input type="text" class="form-control" value=""
+                placeholder="Apellido" id="apellido1"></div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12"><label class="labels">Edad</label><input type="number"
+              class="form-control" placeholder="Ingrese su edad" value="" id="edad1"></div>
+            <div class="col-md-12"><label class="labels">Número de telefono</label><input type="text"
+                class="form-control" placeholder="Ingrese su número de telefono" value="" id="telefono1"></div>
+            <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control"
+                placeholder="Ingrese su e-mail" value="" id="email1"></div>
+          </div>
+
+          <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onclick="perfil()">Save
+              Profile</button></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 py-5">
+            <div class="col-md-12"><span><b>Nombre: </b></span><span id="nombre"></span></div><br>
+            <div class="col-md-12"><span><b>Apellido: </b></span><span id="apellido"></span></div><br>
+            <div class="col-md-12"><span><b>Edad: </b></span><span id="edad"></span ></div><br>
+            <div class="col-md-12"><span><b>Número de telefono: </b></span ><span id="telefono"></span></div><br>
+            <div class="col-md-12"><span><b>Email: </b></span><span id="email"></span></div> <br>
+            
+        </div>
+    </div>
     </div>
   </div>
+  </div>
+  </div>
+
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
