@@ -30,6 +30,44 @@
         font-size: 3.5rem;
       }
     }
+    .file-select {
+  position: relative;
+  display: inline-block;
+}
+
+.file-select::before {
+  background-color: #5678EF;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  content: 'Seleccionar'; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.file-select input[type="file"] {
+  opacity: 0;
+  width: 170px;
+  height: 25px;
+  display: inline-block;
+
+}
+#src-file1:hover{
+  cursor: pointer;
+}
+
+#src-file1::before {
+  content: 'Seleccionar Archivo';
+  
+}
+
+
+
   </style>
   <link rel="stylesheet" href="/estilosperfil.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -64,10 +102,13 @@
 
   <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
-      <div class="col-md-3 border-right">
-        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><a href="https://ibb.co/Lp8byvB"><img class="rounded-circle mt-5"
-            width="100%"
-            src="https://i.ibb.co/HgV1yXR/car1.jpg"></a>
+      <div class="col-md-4 border-right">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+         
+            
+              <img id="imagen" class="rounded-circle mt-5 src="" height="150" alt="Image preview..."><br>
+              <div class="file-select" id="src-file1" >
+              <input id="src-file1" type="file" onchange="anterior()" aria-label="Archivo"></div><br>
             <span class="font-weight-bold"></span><span id="perfil"> </span>
         </div>
       </div>
@@ -91,11 +132,11 @@
                 placeholder="Ingrese su e-mail" value="" id="email1"></div>
           </div>
 
-          <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onclick="perfil()">Save
-              Profile</button></div>
+          <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onclick="perfil()">
+              Guardar Perfil</button></div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="p-3 py-5">
             <div class="col-md-12"><span><b>Nombre: </b></span><span id="nombre"></span></div><br>
             <div class="col-md-12"><span><b>Apellido: </b></span><span id="apellido"></span></div><br>

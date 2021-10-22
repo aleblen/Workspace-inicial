@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("edad").innerHTML=perfil1.edad;
     document.getElementById("telefono").innerHTML=perfil1.telefono;
     document.getElementById("email").innerHTML=perfil1.email;
+
+    var preview = document.getElementById("imagen");
+    let avatar1 =JSON.parse(localStorage.getItem(`avatar`)) ;
+  preview.src=avatar1;
 });
 function perfil() {
     
@@ -41,5 +45,32 @@ function perfil() {
     
     
 }
+function anterior() {
+    var preview = document.getElementById("imagen");
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+  
+    reader.onloadend = function () {
+      preview.src = reader.result;
 
+      let avatar=""
+      avatar=reader.result;
+      localStorage.setItem("avatar",JSON.stringify(avatar));
+      
+      
+ }
+  
+    if (file) {
+      reader.readAsDataURL(file);
+      
+      
+    } else {
+        
+      preview.src="";
+    }
+    
+  }
+  
+  
+  
 
