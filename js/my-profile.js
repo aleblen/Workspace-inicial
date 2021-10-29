@@ -2,7 +2,10 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-    let perfil1 =JSON.parse(localStorage.getItem(`usuarioperfil`)) ;
+  var preview = document.getElementById("imagen");
+  let avatar1 =JSON.parse(localStorage.getItem("avatar")) ;
+preview.src=avatar1;
+  let perfil1 =JSON.parse(localStorage.getItem(`usuarioperfil`)) ;
     
     document.getElementById("nombre").innerHTML=perfil1.nombre;
     document.getElementById("apellido").innerHTML=perfil1.apellido;
@@ -10,9 +13,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("telefono").innerHTML=perfil1.telefono;
     document.getElementById("email").innerHTML=perfil1.email;
 
-    var preview = document.getElementById("imagen");
-    let avatar1 =JSON.parse(localStorage.getItem(`avatar`)) ;
-  preview.src=avatar1;
+    
 });
 function perfil() {
     
