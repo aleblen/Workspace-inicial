@@ -4,8 +4,9 @@
 
 <head>
   <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="264632097992-q8jjmd4dpb8dl740jgt6r3pgcigdceqc.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+  <meta name="google-signin-client_id"
+    content="264632097992-q8jjmd4dpb8dl740jgt6r3pgcigdceqc.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +16,11 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <script src="js/desconectar.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -30,8 +36,27 @@
         font-size: 3.5rem;
       }
     }
-    .imgproduct{
+
+    .imgproduct {
       height: 100px;
+    }
+
+    .is-invalid {
+      border-color: #ee1717;
+      background-color: #ffdddd;
+    }
+
+    .is-valid {
+      border-color: green;
+      background-color: #ddffdd;
+    }
+
+    .bien {
+      color: green;
+    }
+
+    .mal {
+      color: red;
     }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -49,12 +74,12 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      
+
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn" id="bienvenido"></button>
         <div id="myDropdown" class="dropdown-content">
           <a href="my-profile.html">Mi perfil</a>
-          <a  href="cart.html">Mi carrito</a>
+          <a href="cart.html">Mi carrito</a>
           <a onclick="desconectar()" id="desconectar" style="cursor: pointer;">Cerrar sesión</a>
         </div>
       </div>
@@ -62,19 +87,19 @@
   </nav>
   <main role="main" class="pb-5">
     <div class="text-center p-4">
-        <h2>Mi carrito</h2>
-        <p class="lead">Verás aquí todas los productos que hayas puesto en <u><b>mi carrito</b></u>.</p>
+      <h2>Mi carrito</h2>
+      <p class="lead">Verás aquí todas los productos que hayas puesto en <u><b>mi carrito</b></u>.</p>
     </div>
   </main>
   <div class="container">
-    
-  </div> 
+
+  </div>
 
 
   <div class="container">
-  <div class="row">
-    <div class="col-lg-8 mb-4">
-      <form id="cart-update-form">
+    <div class="row">
+      <div class="col-lg-8 mb-4">
+
         <div class="table-responsive">
           <table class="table">
             <thead>
@@ -84,122 +109,144 @@
                 <th class="mob-hide">Precio Unitario</th>
                 <th class="table-qty">Cantidad</th>
                 <th>Subtotal</th>
-                <th></th>
+
               </tr>
             </thead>
             <tbody id="carrito">
-            
-              </tbody>         
+
+            </tbody>
           </table>
         </div>
-      
-      <hr class="my-3">
-      <div class="row">
-        
-        <div class="cart-discount text-center col-md-6 offset-md-3">
-          <div class="card">
-            <div class="card-body">
-              <h4>¿Tienes un código de descuento?</h4>
-              <form>  <input id="coupon_code" name="code" type="text" class="text"/>
-  <input id="set_coupon_code_button" type="submit" value="Aplicar" onclick="swall()"/><br>
-  <small>Ten en cuenta que el descuento se hará sobre el subtotal sin haber sumado el envío</small>
-  
-</div></div></div></div></div>
-<div class="col-lg-4 mb-4">
-  <div class="row">
-    <div class="col-sm-12 col-md-12 cart-estimate">
-      <div class="card mb-3">
-        <div class="card-header">
-          <h2 class="card-title">Estimación del envío</h2>
-        </div>
-        <div class="card-body">
-          <div class="card-text"><div id="estimate_shipping">
-<form action="/cart/estimate" accept-charset="UTF-8" id="estimate_shipping_form" autocomplete="off" method="post">    <!-- Country -->
-<h5><b>Introduzca su dirección:</b></h5>
-<label for="dire">Calle:</label>
-<input type="text" name="1" id="dire" required><br>
-<label for="dire">Número:</label>
-<input type="text" name="1" id="dire" required><br>
-<label for="dire">Esquina:</label>
-<input type="text" name="1" id="dire" required><br><br>
-<h5><b>Forma de envío:</b></h5>
-<input type="radio" name="1" id="pre" required valor=0.15 class="radio"> 
-<label for="pre">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label>
-<input type="radio" name="1" id="exp" valor=0.07 class="radio">
-<label for="exp">Express (5-8 días) - Costo del 7% sobre el subtotal.</label>
-<input type="radio" name="1" id="sta" valor=0.05 class="radio">
-<label for="sta">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</label>
 
-</div>
-</div>
+        <hr class="my-3">
+        <div class="row">
+
+          <div class="cart-discount text-center col-md-6 offset-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h4>¿Tienes un código de descuento?</h4>
+                <input id="coupon_code" name="code" type="text" class="text" />
+                <input id="set_coupon_code_button" type="submit" value="Aplicar" onclick="swall()" /><br>
+                <small>Ten en cuenta que el descuento se hará sobre el subtotal sin haber sumado el envío</small>
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-     <div class="col-12 cart-totals">
-      <table class="table table-striped">   
-        <tr class="totals">
-          <td colspan="1" class="text-left">Subtotal</td>
-          <td colspan="1" class="text-right" id="sub"></td>
-        </tr>
-        <tr class="totals">
-          <td colspan="1" class="text-left">Envío</td>
-          <td colspan="1" class="text-right" id="envio"></td>
-        </tr>
-        <tr class="totals">
-          <td colspan="1" class="text-left">Descuento</td>
-          
-          <td colspan="1" class="text-right" id="descuento"></td>
-        </tr>
-        <tr class="totals key">
-          <td colspan="1" class="text-left"><strong>Total</strong></td>
-          <td colspan="1" class="text-right" id="total"><strong></strong></td>
-        </tr>
-      </table>
+      <div class="col-lg-4 mb-4">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 cart-estimate">
+            <div class="card mb-3">
+              <div class="card-header">
+                <h2 class="card-title">Estimación del envío</h2>
+              </div>
+              <div class="card-body">
+                <div class="card-text">
+                  <div id="estimate_shipping">
+                    <div class="needs-validation">
+                      <h5><b>Introduzca su dirección:</b></h5>
+                      <label for="calle">Calle:</label>
+                      <input type="text" id="calle">
+                      <span id="tick"></span><br>
+                      <div class="invalid-feedback"> No ingresaste calle</div>
+                      <div class="valid-feedback">Correcto!</div><br>
+                      <label for="num">Número:</label>
+                      <input type="text" id="num">
+                      <span id="tick1"></span><br>
+                      <div class="invalid-feedback"> No ingresaste número</div>
+                      <div class="valid-feedback">Correcto!</div><br>
+                      <label for="esq">Esquina:</label>
+                      <input type="text" id="esq">
+                      <span id="tick2"></span><br>
+                      <div class="invalid-feedback"> No ingresaste esquina</div>
+                      <div class="valid-feedback">Correcto!</div><br><br>
+                      <h5><b>Forma de envío:</b></h5>
+                      <input type="radio" name="form" id="pre" valor=0.15 class="radio">
+                      <label for="pre">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label>
+                      <input type="radio" name="form" id="exp" valor=0.07 class="radio">
+                      <label for="exp">Express (5-8 días) - Costo del 7% sobre el subtotal.</label>
+                      <input type="radio" name="form" id="sta" valor=0.05 class="radio">
+                      <label for="sta">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</label>
 
-      <div class="text-center cart-actions">
-        <!-- <div id="payments">
-    <h4 class="legend">Formas de pago</h4>
-    <div id="payments_options">
-      <ul style="text-align: left;">
-        
-          <input required type="radio" name="metodo" value="27792"  class="radiobox" onclick="document.getElementById('pi3').style.display = 'none',document.getElementById('pi2').style.display = ''" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 cart-totals">
+              <table class="table table-striped">
+                <tr class="totals">
+                  <td colspan="1" class="text-left">Subtotal</td>
+                  <td colspan="1" class="text-right" id="sub"></td>
+                </tr>
+                <tr class="totals">
+                  <td colspan="1" class="text-left">Envío</td>
+                  <td colspan="1" class="text-right" id="envio"></td>
+                </tr>
+                <tr class="totals">
+                  <td colspan="1" class="text-left">Descuento</td>
+
+                  <td colspan="1" class="text-right" id="descuento"></td>
+                </tr>
+                <tr class="totals key">
+                  <td colspan="1" class="text-left"><strong>Total</strong></td>
+                  <td colspan="1" class="text-right" id="total"><strong></strong></td>
+                </tr>
+              </table>
+
+             
+  <button id="" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Método de pago</button>
+<br>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Método de  pago</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="form-group">
+                            <input type="radio" name="metodo" 
+          class="radiobox" onclick="document.getElementById('metodo2').style.display = 'none',document.getElementById('metodo1').style.display = ''" />
           <span>Transferencia bancaria</span>
-          <div id="pi2" class="payment_information" style="display:none;">
-            RedBrou cuenta de banco 244466666
+          <div id="metodo1" class="payment_information" style="display:none;">
+            <input type="text" name="" id="">
 
           </div>
-        
-        <br>
-          <input type="radio" name="metodo" value="30906"  class="radiobox" onclick="document.getElementById('pi2').style.display = 'none',document.getElementById('pi3').style.display = ''" />
+                          </div>
+                          <div class="form-group">
+                            <input type="radio" name="metodo" 
+          class="radiobox" onclick="document.getElementById('metodo1').style.display = 'none',document.getElementById('metodo2').style.display = ''" />
           <span>Tarjeta de crédito</span>
-          <div id="pi3" class="payment_information" style="display:none;">
-            Ingrese su número de tarjeta:<br><input type="text" name="metodo" id="tarjeta">
+          <div id="metodo2" class="payment_information" style="display:none;">
+            <label for="tarjeta">Ingrese su número de tarjeta</label><input type="text" name="metodo" id="tarjeta">
           </div>
-        
-      </ul>
-      
-    </div>
-  </div> -->
-        <button type="submit" value="Comprar"  class="btn btn-primary btn-block">Comprar</button>
-        
-        
-
-        <a href="/products.html" class="btn btn-link btn-block" title="&larr; Continuar comprando">&larr; Continuar comprando</a>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Enviar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button id="comprar" class="btn btn-primary btn-block" >Finalizar Compra</button>
+                <a href="/products.html" class="btn btn-link btn-block" title="&larr; Continuar comprando">&larr;
+                  Continuar comprando</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </form>
-  </div>
-</div>
-</div>
 
-</div>
-            
-          
-        
-        
-      
-    
-  </div>
+  
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
