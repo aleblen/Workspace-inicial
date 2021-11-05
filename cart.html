@@ -41,15 +41,15 @@
       height: 100px;
     }
 
-    .is-invalid {
+    .invalido {
       border-color: #ee1717;
       background-color: #ffdddd;
-    }
+      color: red;
 
-    .is-valid {
-      border-color: green;
-      background-color: #ddffdd;
     }
+    
+
+    
 
     .bien {
       color: green;
@@ -147,28 +147,31 @@
                     <div class="needs-validation">
                       <h5><b>Introduzca su dirección:</b></h5>
                       <label for="calle">Calle:</label>
-                      <input type="text" id="calle">
-                      <span id="tick"></span><br>
-                      <div class="invalid-feedback"> No ingresaste calle</div>
-                      <div class="valid-feedback">Correcto!</div><br>
+                      <input type="text" id="calle" >
+                      <br><small id="tick"></small><br>
+                      <!-- <div class="invalid-feedback"> No ingresaste calle</div> -->
+                      
                       <label for="num">Número:</label>
-                      <input type="text" id="num">
-                      <span id="tick1"></span><br>
-                      <div class="invalid-feedback"> No ingresaste número</div>
-                      <div class="valid-feedback">Correcto!</div><br>
+                      <input type="number" id="num" >
+                      <br><small id="tick1"></small><br>
+                      <!-- <div class="invalid-feedback"> No ingresaste número</div> -->
+                      
                       <label for="esq">Esquina:</label>
-                      <input type="text" id="esq">
-                      <span id="tick2"></span><br>
-                      <div class="invalid-feedback"> No ingresaste esquina</div>
-                      <div class="valid-feedback">Correcto!</div><br><br>
-                      <h5><b>Forma de envío:</b></h5>
-                      <input type="radio" name="form" id="pre" valor=0.15 class="radio">
+                      <input type="text" id="esq" >
+                      <br><small id="tick2"></small><br>
+                      <!-- <div class="invalid-feedback"> No ingresaste esquina</div> -->
+                      <br>
+                      
+                      <h5 id="anuncio"><b>Forma de envío:</b></h5>
+                      <small id="tick3"></small><br>
+                      <!-- <div class="invalid-feedback"> No ingresaste envio</div> -->
+                      <input type="radio" name="form" id="pre" valor=0.15 class="radio"  > 
                       <label for="pre">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label>
                       <input type="radio" name="form" id="exp" valor=0.07 class="radio">
                       <label for="exp">Express (5-8 días) - Costo del 7% sobre el subtotal.</label>
                       <input type="radio" name="form" id="sta" valor=0.05 class="radio">
                       <label for="sta">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</label>
-
+                      
                     </div>
                   </div>
                 </div>

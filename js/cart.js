@@ -3,13 +3,20 @@
 //elementos HTML presentes.
 var costosub = 0;
 var valorenvio = 0;
+let checkeado=false;
+let envios = document.getElementsByName("form");
+
 document.addEventListener("DOMContentLoaded", function (e) {
+  
+
+
   for (let radio of document.getElementsByClassName("radio")) {
     radio.addEventListener("click", function (e) {
       valorenvio = radio.getAttribute("valor");
       calcenvio();
     })
   }
+ 
 });
 
 
@@ -28,6 +35,8 @@ function calcularcasi() {
 
 
 function calcenvio() {
+ 
+
   document.getElementById("envio").textContent = (costosub * valorenvio).toFixed(1);
   if (descuento == 0) {
     document.getElementById("total").textContent = (costosub + (costosub * valorenvio)).toFixed(1);
@@ -149,58 +158,67 @@ document.getElementById('comprar').addEventListener("click", function () {
   var calle = document.getElementById('calle');
   var num = document.getElementById('num');
   var esq = document.getElementById('esq');
+  
+
   var check = document.getElementById('tick');
   var check1 = document.getElementById('tick1');
   var check2 = document.getElementById('tick2');
+  var check3=document.getElementById(`tick3`);
+  
   var marca = "";
   var marca1 = "";
   var marca2 = "";
-  calle.classList.remove('is-invalid');
-  calle.classList.remove('is-valid');
+  var marca3 = "";
+
+  var anuncio=document.getElementById("anuncio");
+  anuncio.classList.remove('invalido');
+  
+  calle.classList.remove('invalido');
   check.classList.remove('mal');
-  check.classList.remove('bien');
-  num.classList.remove('is-invalid');
-  num.classList.remove('is-valid');
+
+  num.classList.remove('invalido');
   check1.classList.remove('mal');
-  check1.classList.remove('bien');
-  esq.classList.remove('is-invalid');
-  esq.classList.remove('is-valid');
+
+  esq.classList.remove('invalido');
   check2.classList.remove('mal');
-  check2.classList.remove('bien');
+ 
+
   if (calle.value === "") {
 
-    calle.classList.add('is-invalid');
+    calle.classList.add('invalido');
     tick.classList.add('mal');
-    marca = " X";
+    marca = "No ingresaste calle";
 
-  } else {
-    marca = "&#10004;";
-    calle.classList.add('is-valid');
-    tick.classList.add('bien');
-  }
+  } 
   document.getElementById('tick').innerHTML = marca;
   if (num.value === "") {
 
-    num.classList.add('is-invalid');
+    num.classList.add('invalido');
     tick1.classList.add('mal');
-    marca1 = " X";
-
-  } else {
-    marca1 = "&#10004;";
-    num.classList.add('is-valid');
-    tick1.classList.add('bien');
+    marca1 = "No ingresaste número";
+   
   }
   document.getElementById('tick1').innerHTML = marca1;
   if (esq.value === "") {
 
-    esq.classList.add('is-invalid');
+    esq.classList.add('invalido');
     tick2.classList.add('mal');
-    marca2 = " X";
+    marca2 = "No ingresaste esquina";
 
-  } else {
-    marca2 = "&#10004;";
-    esq.classList.add('is-valid');
-    tick2.classList.add('bien');
-  }
+  } 
   document.getElementById('tick2').innerHTML = marca2;
+
+
+  for (let x = 0; x < envios.length; x++) {
+    if (envios[x].checked) {
+      checkeado=true;
+    }
+    
+  }
+  if (!checkeado) {
+    anuncio.classList.add('invalido'); 
+    tick3.classList.add('mal');
+    marca3 = "No ingresaste envio";
+  }
+  document.getElementById('tick3').innerHTML = marca3;
 });
