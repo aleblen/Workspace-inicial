@@ -47,9 +47,9 @@
       color: red;
 
     }
-    
 
-    
+
+
 
     .bien {
       color: green;
@@ -109,6 +109,7 @@
                 <th class="mob-hide">Precio Unitario</th>
                 <th class="table-qty">Cantidad</th>
                 <th>Subtotal</th>
+                <th>Borrar</th>
 
               </tr>
             </thead>
@@ -147,31 +148,31 @@
                     <div class="needs-validation">
                       <h5><b>Introduzca su dirección:</b></h5>
                       <label for="calle">Calle:</label>
-                      <input type="text" id="calle" >
+                      <input type="text" id="calle">
                       <br><small id="tick"></small><br>
                       <!-- <div class="invalid-feedback"> No ingresaste calle</div> -->
-                      
+
                       <label for="num">Número:</label>
-                      <input type="number" id="num" >
+                      <input type="number" id="num">
                       <br><small id="tick1"></small><br>
                       <!-- <div class="invalid-feedback"> No ingresaste número</div> -->
-                      
+
                       <label for="esq">Esquina:</label>
-                      <input type="text" id="esq" >
+                      <input type="text" id="esq">
                       <br><small id="tick2"></small><br>
                       <!-- <div class="invalid-feedback"> No ingresaste esquina</div> -->
                       <br>
-                      
+
                       <h5 id="anuncio"><b>Forma de envío:</b></h5>
                       <small id="tick3"></small><br>
                       <!-- <div class="invalid-feedback"> No ingresaste envio</div> -->
-                      <input type="radio" name="form" id="pre" valor=0.15 class="radio"  > 
+                      <input type="radio" name="form" id="pre" valor=0.15 class="radio">
                       <label for="pre">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label>
                       <input type="radio" name="form" id="exp" valor=0.07 class="radio">
                       <label for="exp">Express (5-8 días) - Costo del 7% sobre el subtotal.</label>
                       <input type="radio" name="form" id="sta" valor=0.05 class="radio">
                       <label for="sta">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</label>
-                      
+
                     </div>
                   </div>
                 </div>
@@ -198,57 +199,76 @@
                 </tr>
               </table>
 
-             
-  <button id="" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Método de pago</button>
-<br>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Método de  pago</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="form-group">
-                            <input type="radio" name="metodo" 
-          class="radiobox" onclick="document.getElementById('metodo2').style.display = 'none',document.getElementById('metodo1').style.display = ''" />
-          <span>Transferencia bancaria</span>
-          <div id="metodo1" class="payment_information" style="display:none;">
-            <input type="text" name="" id="">
+              
+              <button id="enviocheck" class="btn btn-secondary btn-block" data-toggle="modal" data-target="#exampleModal"
+                data-whatever="@mdo">Método de pago</button>
+                <small id="tick4"></small>
+              <br>
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      
+                      <h5 class="modal-title" id="exampleModalLabel">Método de pago</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <input type="radio" name="metodo" class="radiobox"
+                            onclick="document.getElementById('metodo2').style.display = 'none',document.getElementById('metodo1').style.display = ''" />
+                          <span>Transferencia bancaria</span>
+                          <div id="metodo1" class="payment_information" style="display:none;">
 
-          </div>
+                            <label for="cuenta">Número de cuenta</label>
+                            <input type="text" name=""
+                              id="cuenta">
+
                           </div>
-                          <div class="form-group">
-                            <input type="radio" name="metodo" 
-          class="radiobox" onclick="document.getElementById('metodo1').style.display = 'none',document.getElementById('metodo2').style.display = ''" />
-          <span>Tarjeta de crédito</span>
-          <div id="metodo2" class="payment_information" style="display:none;">
-            <label for="tarjeta">Ingrese su número de tarjeta</label><input type="text" name="metodo" id="tarjeta">
-          </div>
+                        </div>
+                        <div class="form-group">
+                          <input type="radio" name="metodo" class="radiobox"
+                            onclick="document.getElementById('metodo1').style.display = 'none',document.getElementById('metodo2').style.display = ''" />
+                          <span>Tarjeta de crédito</span>
+                          <div id="metodo2" class="payment_information" style="display:none;">
+                            <label for="num">Número de tarjeta</label>
+                            <input type="number" id="num1">
+                            <label for="num">Código de seguridad</label>
+                            <input type="number" id="cod"><br>
+                            <label for="num">Vencimiento</label>
+                            <input type="date" id="venc">
                           </div>
-                        </form>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Enviar</button>
-                      </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
                     </div>
                   </div>
                 </div>
-                <button id="comprar" class="btn btn-primary btn-block" >Finalizar Compra</button>
-                <a href="/products.html" class="btn btn-link btn-block" title="&larr; Continuar comprando">&larr;
-                  Continuar comprando</a>
               </div>
+              <button id="comprar" class="btn btn-primary btn-block" onclick="comprar()">Finalizar Compra</button>
+              <a href="/products.html" class="btn btn-link btn-block" title="&larr; Continuar comprando">&larr;
+                Continuar comprando</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
 
-  
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
